@@ -13,6 +13,7 @@ $(document).ready(function () {
                 icon: "success"
             });
             $("#contact-form")[0].reset(); // Clear form
+            $('#contactModal').modal('hide'); // Close modal
         } else {
             Swal.fire({
                 title: "Error!",
