@@ -33,3 +33,34 @@ $(document).ready(function () {
         });
     });
 });
+
+// word fade in 
+// JavaScript to add word-by-word fade-in effect
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to split text into individual words and add animation
+    function animateText(id) {
+        const element = document.getElementById(id);
+        const text = element.innerText;
+        element.innerHTML = ''; // Clear existing content
+        const words = text.split(' '); // Split the text into words
+
+        words.forEach((word, index) => {
+            const span = document.createElement('span');
+            span.innerText = word + ' '; // Add space after each word
+            span.classList.add('word');
+            span.style.animationDelay = `${index * 0.1}s`; // Delay for each word
+            element.appendChild(span);
+
+             // Add a space after each word for spacing
+             const space = document.createElement('span');
+             space.innerText = ' ';
+             element.appendChild(space);
+        });
+    }
+
+    // Call the function for each paragraph and title
+    animateText('about-text');
+    animateText('about-description');
+    animateText('about-more');
+    animateText('about-passion');
+});
