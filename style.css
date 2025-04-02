@@ -15,3 +15,46 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.profile-img {
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Ensures the image fills the container while maintaining aspect ratio */
+    border-radius: 50%; /* Makes it a perfect circle */
+    border: 4px solid #007bff; /* Optional: Adds a border for styling */
+}
+
+/* Cover Photo Section */
+.cover-photo {
+    background: url('assets/cover photo.png') no-repeat center center;
+    background-size: cover;
+    height: 60vh; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+
+/* Overlay to Darken Image (Optional) */
+.cover-photo .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darkens the cover image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Title on Cover Photo */
+.cover-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    z-index: 1;
+}
