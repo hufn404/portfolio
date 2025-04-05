@@ -1,48 +1,46 @@
 $(document).ready(function () {
-    // When user clicks the Contact link
+    // Open the contact modal when user click on it
     $("#contactButton").click(function () {
+        $('#contactModal').modal('show');
+    });
+
+    $('#contact-form').submit(function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+
+        if (!name || !email || !message) {
+            Swal.fire({
+                title: 'Oops!',
+                text: 'Please fill out all fields.',
+                icon: 'warning',
+                confirmButtonText: 'Okay'
+            });
+            return;
+        }
+
+        // Display confirmation message
         Swal.fire({
-            title: "Contact Me",
-            html: `
-                <input type="text" id="swal-name" class="swal2-input" placeholder="Your Name">
-                <input type="email" id="swal-email" class="swal2-input" placeholder="Your Email">
-                <textarea id="swal-message" class="swal2-textarea" placeholder="Your Message"></textarea>
-            `,
-            showCancelButton: true,
-            confirmButtonText: "Send Message",
-            preConfirm: () => {
-                let name = $("#swal-name").val();
-                let email = $("#swal-email").val();
-                let message = $("#swal-message").val();
-
-                if (!name || !email || !message) {
-                    Swal.showValidationMessage("Please fill all the fields.");
-                    return false;
-                }
-
-                return { name, email, message };
-            }
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Message Sent!",
-                    text: `Thank you, ${result.value.name}! I will get back to you soon.`,
-                    icon: "success"
-                });
-            }
+            title: 'Message Sent!',
+            text: 'Thank you for reaching out, I will get back to you soon!',
+            icon: 'success',
+            confirmButtonText: 'Okay'
         });
+
     });
 });
 
-// word fade in 
-// JavaScript to add word-by-word fade-in effect
+
+// Word fade in 
 document.addEventListener('DOMContentLoaded', () => {
-    // Function to split text into individual words and add animation
+    // Split text into individual words and add animation
     function animateText(id) {
         const element = document.getElementById(id);
         const text = element.innerText;
         element.innerHTML = ''; // Clear existing content
-        const words = text.split(' '); // Split the text into words
+        const words = text.split(' '); // Split into words
 
         words.forEach((word, index) => {
             const span = document.createElement('span');
@@ -58,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Call the function for each paragraph and title
+    // Call the function for each paragraph
     animateText('about-text');
     animateText('about-description');
     animateText('about-more');
