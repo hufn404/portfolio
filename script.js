@@ -14,7 +14,7 @@ $(document).ready(function () {
                 let name = $("#swal-name").val();
                 let email = $("#swal-email").val();
                 let message = $("#swal-message").val();
-                
+
                 if (!name || !email || !message) {
                     Swal.showValidationMessage("Please fill all the fields.");
                     return false;
@@ -24,15 +24,40 @@ $(document).ready(function () {
             }
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Message Sent!",
-                    text: `Thank you, ${result.value.name}! I will get back to you soon.`,
-                    icon: "success"
+                // Send the data to FormSubmit using an AJAX request
+                $.ajax({
+                    url: 'https://formsubmit.co/411f1d78784d491ecb47c28f732c29f1',  // FormSubmit URL
+                    method: 'POST',
+                    data: {
+                        name: result.value.name,
+                        email: result.value.email,
+                        message: result.value.message,
+                        _subject: "New Message From Portfolio",  // Optional subject
+                        _autoresponse: "Thank you! I’ll get back to you soon.", // Optional autoresponse
+                        _template: "table" // Optional template
+                    },
+                    success: function() {
+                        // Show the success notification after the message is sent
+                        Swal.fire({
+                            title: "Message Sent!",
+                            text: `Thank you, ${result.value.name}! I will get back to you soon.`,
+                            icon: "success"
+                        });
+                    },
+                    error: function() {
+                        // Show error message if submission fails
+                        Swal.fire({
+                            title: "Error",
+                            text: "Something went wrong, please try again.",
+                            icon: "error"
+                        });
+                    }
                 });
             }
         });
     });
 });
+
 
 
 
