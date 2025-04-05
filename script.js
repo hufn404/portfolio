@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // Open the contact modal when user click on it
     $("#contactButton").click(function () {
         Swal.fire({
             title: "Contact Me",
@@ -24,34 +23,37 @@ $(document).ready(function () {
             }
         }).then((result) => {
             if (result.isConfirmed) {
-                // Send the data to FormSubmit using an AJAX request
-                $.ajax({
-                    url: 'https://formsubmit.co/411f1d78784d491ecb47c28f732c29f1',  // FormSubmit URL
-                    method: 'POST',
-                    data: {
-                        name: result.value.name,
-                        email: result.value.email,
-                        message: result.value.message,
-                        _subject: "New Message From Portfolio",  // Optional subject
-                        _autoresponse: "Thank you! I’ll get back to you soon.", // Optional autoresponse
-                        _template: "table" // Optional template
-                    },
-                    success: function() {
-                        // Show the success notification after the message is sent
+                let formData = new FormData();
+                formData.append("name", result.value.name);
+                formData.append("email", result.value.email);
+                formData.append("message", result.value.message);
+
+                fetch("https://formspree.io/f/movekzrg", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
                         Swal.fire({
                             title: "Message Sent!",
                             text: `Thank you, ${result.value.name}! I will get back to you soon.`,
                             icon: "success"
                         });
-                    },
-                    error: function() {
-                        // Show error message if submission fails
-                        Swal.fire({
-                            title: "Error",
-                            text: "Something went wrong, please try again.",
-                            icon: "error"
+                    } else {
+                        response.json().then(data => {
+                            let errorMsg = "Oops! Something went wrong.";
+                            if (data.errors) {
+                                errorMsg = data.errors.map(error => error.message).join(", ");
+                            }
+                            Swal.fire("Error", errorMsg, "error");
                         });
                     }
+                })
+                .catch(() => {
+                    Swal.fire("Error", "Something went wrong. Please try again later.", "error");
                 });
             }
         });
