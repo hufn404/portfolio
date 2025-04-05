@@ -1,36 +1,39 @@
 $(document).ready(function () {
     // Open the contact modal when user click on it
     $("#contactButton").click(function () {
-        $('#contactModal').modal('show');
-    });
-
-    $('#contact-form').submit(function (e) {
-        e.preventDefault(); // Prevent default form submission
-
-        var name = $('#name').val();
-        var email = $('#email').val();
-        var message = $('#message').val();
-
-        if (!name || !email || !message) {
-            Swal.fire({
-                title: 'Oops!',
-                text: 'Please fill out all fields.',
-                icon: 'warning',
-                confirmButtonText: 'Okay'
-            });
-            return;
-        }
-
-        // Display confirmation message
         Swal.fire({
-            title: 'Message Sent!',
-            text: 'Thank you for reaching out, I will get back to you soon!',
-            icon: 'success',
-            confirmButtonText: 'Okay'
-        });
+            title: "Contact Me",
+            html: `
+                <input type="text" id="swal-name" class="swal2-input" placeholder="Your Name">
+                <input type="email" id="swal-email" class="swal2-input" placeholder="Your Email">
+                <textarea id="swal-message" class="swal2-textarea" placeholder="Your Message"></textarea>
+            `,
+            showCancelButton: true,
+            confirmButtonText: "Send Message",
+            preConfirm: () => {
+                let name = $("#swal-name").val();
+                let email = $("#swal-email").val();
+                let message = $("#swal-message").val();
+                
+                if (!name || !email || !message) {
+                    Swal.showValidationMessage("Please fill all the fields.");
+                    return false;
+                }
 
+                return { name, email, message };
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Message Sent!",
+                    text: `Thank you, ${result.value.name}! I will get back to you soon.`,
+                    icon: "success"
+                });
+            }
+        });
     });
 });
+
 
 
 // Word fade in 
