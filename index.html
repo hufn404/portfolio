@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </head>
 <body>
-    <!-- Fixed Navbar -->
+    
+    <!--Navigation bar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">My Portfolio</a>
+        <a class="navbar-brand" href="#">Sharon's Portfolio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,13 +29,14 @@
     </div>
 </nav>
 
-    <!-- Cover Photo Section -->
+    
     <header class="cover-photo">
         <div class="overlay">
             <h1 class="cover-title">Welcome to My Portfolio</h1>
         </div>
     </header>
 
+    <!--About Me-->
     <section id="about" class="container mt-5">
         <h2 class="text-center about-title">About Me</h2>
         <div class="row">
@@ -41,19 +44,25 @@
                 <img src="assets/profile.PNG" class="img-fluid rounded-circle profile-img" alt="Profile Image">
             </div>
             <div class="col-md-8">
-                <p id="about-text">Hello! I'm [Your Name] 👋</p>
-                <p id="about-description">I am a dedicated Software Engineer with a strong background in software development, UI design, and project management. I hold a Bachelor's degree in Information Technology, majoring in Software Engineering from ABC University (2021-2024).</p>
-                <p id="about-more">Before pursuing my degree, I worked as an Administrative Assistant (2019-2020), where I developed strong organizational and multitasking skills. Post-graduation, I have been working as a Freelance Group Admin & Purchasing Agent (Feb 2024 - Mar 2025), gaining experience in project coordination, client management, and procurement processes.</p>
-                <p id="about-passion">My passion lies in software development, and I enjoy working on projects that combine technology, innovation, and problem-solving. I am always eager to learn new skills and collaborate on exciting tech projects! 🚀</p>
+                <p id="about-text">Hi! I'm Sharon Ong👋</p>
+                <p id="about-description">I am a dedicated Software Engineer with a strong background in software development, 
+                    UI design, and project management. I hold a Bachelor's degree in Information Technology, majoring in Software 
+                    Engineering from ABC University (2021-2024).</p>
+                <p id="about-more">Before pursuing my degree, I worked as an Administrative Assistant (2019-2020), where I developed 
+                    strong organizational and multitasking skills. Post-graduation, I have been working as a Freelance Group Admin & 
+                    Purchasing Agent (Feb 2024 - Mar 2025), gaining experience in project coordination, client management, and procurement 
+                    processes.</p>
+                <p id="about-passion">My passion lies in software development, and I enjoy working on projects that combine technology, 
+                    innovation, and problem-solving. I am always eager to learn new skills and collaborate on exciting tech projects!</p>
             </div>
         </div>
     </section>
 
-<!-- Skills Section -->
+<!--Skills-->
 <section id="skills" class="container mt-5">
     <h2 class="text-center">Skills</h2>
     <div class="row text-center">
-        <!-- Programming Languages -->
+        
         <div class="col-md-6">
             <h4 class="category-title programming">Programming Languages</h4>
             <div class="skill-box programming">Python</div>
@@ -65,7 +74,6 @@
             <div class="skill-box programming">SQL</div>
         </div>
 
-        <!-- Development Tools -->
         <div class="col-md-6">
             <h4 class="category-title tools">Development Tools</h4>
             <div class="skill-box tools">Anaconda Jupyter</div>
@@ -77,7 +85,6 @@
             <div class="skill-box tools">GitHub</div>
         </div>
 
-        <!-- Office & Productivity -->
         <div class="col-md-6">
             <h4 class="category-title office">Office & Productivity</h4>
             <div class="skill-box office">Microsoft Teams</div>
@@ -86,8 +93,7 @@
             <div class="skill-box office">PowerPoint</div>
             <div class="skill-box office">Microsoft Access</div>
         </div>
-
-        <!-- Other Skills -->
+        
         <div class="col-md-6">
             <h4 class="category-title other">Other Skills</h4>
             <div class="skill-box other">Multitasking</div>
@@ -100,35 +106,38 @@
 
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="contact-form">
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" id="message" rows="3" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
-                    </form>
-                </div>
+<!-- Contact Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="https://formsubmit.co/wenpeiong00@gmail.com" method="POST">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="message" rows="3" placeholder="Your Message" required></textarea>
+                    </div>
+                    <!-- Optional hidden fields -->
+                    <input type="hidden" name="_subject" value="New Message From Portfolio">
+                    <input type="hidden" name="_autoresponse" value="Thank you! I’ll get back to you soon.">
+                    <input type="hidden" name="_template" value="table">
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                </form>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
+</div>
+    
     <footer class="text-center bg-dark text-light py-3 mt-5">
-        <p>&copy; 2024 My Portfolio | Designed by WP</p>
+        <p>&copy; 2025 Sharon's Portfolio | Designed by Sharon Ong</p>
     </footer>
 
     <script src="script.js"></script>
