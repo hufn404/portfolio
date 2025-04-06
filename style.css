@@ -37,9 +37,9 @@ footer {
 
 /* Fade-in animation for profile */
 .profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    border-radius: 70%;
     object-fit: cover;
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards 0.5s;
