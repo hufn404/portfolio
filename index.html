@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,26 +10,28 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body>
-    
-    <!--Navigation bar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">Sharon's Portfolio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" id="contactButton">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
-    
+<body>
+
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Sharon's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="messageButton">Message Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
     <header class="cover-photo">
         <div class="overlay">
             <h1 class="cover-title">Welcome to My Portfolio</h1>
@@ -44,75 +47,156 @@
             </div>
             <div class="col-md-8">
                 <p id="about-text">Hi! I'm Sharon Ong👋</p>
-                <p id="about-description">I am a dedicated Software Engineer with a strong background in software development, 
-                    UI design, and project management. I hold a Bachelor's degree in Information Technology, majoring in Software 
+                <p id="about-description">I am a dedicated Software Engineer with a strong background in software
+                    development,
+                    UI design, and project management. I hold a Bachelor's degree in Information Technology, majoring in
+                    Software
                     Engineering from ABC University (2021-2024).</p>
-                <p id="about-more">Before pursuing my degree, I worked as an Administrative Assistant (2019-2020), where I developed 
-                    strong organizational and multitasking skills. Post-graduation, I have been working as a Freelance Group Admin & 
-                    Purchasing Agent (Feb 2024 - Mar 2025), gaining experience in project coordination, client management, and procurement 
+                <p id="about-more">Before pursuing my degree, I worked as an Administrative Assistant (2019-2020), where
+                    I developed
+                    strong organizational and multitasking skills. Post-graduation, I have been working as a Freelance
+                    Group Admin &
+                    Purchasing Agent (Feb 2024 - Mar 2025), gaining experience in project coordination, client
+                    management, and procurement
                     processes.</p>
-                <p id="about-passion">My passion lies in software development, and I enjoy working on projects that combine technology, 
-                    innovation, and problem-solving. I am always eager to learn new skills and collaborate on exciting tech projects!</p>
+                <p id="about-passion">My passion lies in software development, and I enjoy working on projects that
+                    combine technology,
+                    innovation, and problem-solving. I am always eager to learn new skills and collaborate on exciting
+                    tech projects!</p>
             </div>
         </div>
     </section>
 
-<!--Skills-->
-<section id="skills" class="container mt-5">
-    <h2 class="text-center">Skills</h2>
-    <div class="row text-center">
-        
-        <div class="col-md-6">
-            <h4 class="category-title programming">Programming Languages</h4>
-            <div class="skill-box programming">Python</div>
-            <div class="skill-box programming">JavaScript</div>
-            <div class="skill-box programming">C#</div>
-            <div class="skill-box programming">C++</div>
-            <div class="skill-box programming">Java</div>
-            <div class="skill-box programming">Kotlin</div>
-            <div class="skill-box programming">SQL</div>
-        </div>
+    <!--Skills-->
+    <section id="skills" class="container mt-5">
+        <h2 class="text-center">Skills</h2>
+        <div class="row text-center">
 
-        <div class="col-md-6">
-            <h4 class="category-title tools">Development Tools</h4>
-            <div class="skill-box tools">Anaconda Jupyter</div>
-            <div class="skill-box tools">PyCharm</div>
-            <div class="skill-box tools">Visual Studio 2022</div>
-            <div class="skill-box tools">Visual Studio Code</div>
-            <div class="skill-box tools">Android Studio</div>
-            <div class="skill-box tools">Flutter</div>
-            <div class="skill-box tools">GitHub</div>
-        </div>
-
-        <div class="col-md-6">
-            <h4 class="category-title office">Office & Productivity</h4>
-            <div class="skill-box office">Microsoft Teams</div>
-            <div class="skill-box office">Microsoft Word</div>
-            <div class="skill-box office">Microsoft Excel</div>
-            <div class="skill-box office">PowerPoint</div>
-            <div class="skill-box office">Microsoft Access</div>
-        </div>
-        
-        <div class="col-md-6">
-            <h4 class="category-title other">Other Skills</h4>
-            <div class="skill-box other">Multitasking</div>
-            <div class="skill-box other">UI/UX Design</div>
-            <div class="skill-box other">Data Visualization</div>
-            <div class="skill-box other">Project Management</div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Modal -->
-<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="col-md-6">
+                <h4 class="category-title programming">Programming Languages</h4>
+                <div class="skill-box programming">Python</div>
+                <div class="skill-box programming">JavaScript</div>
+                <div class="skill-box programming">C#</div>
+                <div class="skill-box programming">C++</div>
+                <div class="skill-box programming">Java</div>
+                <div class="skill-box programming">Kotlin</div>
+                <div class="skill-box programming">SQL</div>
             </div>
-            <div class="modal-body">
-                <!--
+
+            <div class="col-md-6">
+                <h4 class="category-title tools">Development Tools</h4>
+                <div class="skill-box tools">Anaconda Jupyter</div>
+                <div class="skill-box tools">PyCharm</div>
+                <div class="skill-box tools">Visual Studio 2022</div>
+                <div class="skill-box tools">Visual Studio Code</div>
+                <div class="skill-box tools">Android Studio</div>
+                <div class="skill-box tools">Flutter</div>
+                <div class="skill-box tools">GitHub</div>
+            </div>
+
+            <div class="col-md-6">
+                <h4 class="category-title office">Office & Productivity</h4>
+                <div class="skill-box office">Microsoft Teams</div>
+                <div class="skill-box office">Microsoft Word</div>
+                <div class="skill-box office">Microsoft Excel</div>
+                <div class="skill-box office">PowerPoint</div>
+                <div class="skill-box office">Microsoft Access</div>
+            </div>
+
+            <div class="col-md-6">
+                <h4 class="category-title other">Other Skills</h4>
+                <div class="skill-box other">Multitasking</div>
+                <div class="skill-box other">UI/UX Design</div>
+                <div class="skill-box other">Data Visualization</div>
+                <div class="skill-box other">Project Management</div>
+            </div>
+        </div>
+    </section>
+
+    <!--Contact Me-->
+    <section id="contact" class="container fixed-container mt-5">
+        <h2 class="text-center contact-title mb-4">Contact Me</h2>
+
+        <div class="row justify-content-center text-center">
+            <!-- WhatsApp Table -->
+            <div class="col-md-4 mb-4">
+                <div class="contact-box p-3 rounded text-center">
+                    <h5 class="mb-3 fw-bold">Phone Number</h5>
+                    <table class="table table-borderless text-start m-0">
+                        <tbody>
+                            <tr>
+                                <td style="width: 50px;">
+                                    <a href="https://wa.me/601120969889" target="_blank" title="Chat on WhatsApp">
+                                        <img src="assets/whatsapp icon.svg" width="35" alt="WhatsApp Icon">
+                                    </a>
+                                </td>
+                                <td class="align-middle">
+                                    <a href="https://wa.me/601120969889" target="_blank"
+                                        class="contact-link text-decoration-underline text-primary fw-medium">
+                                        +60 11 2096 9889
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://wa.me/6581667971" target="_blank" title="Chat on WhatsApp">
+                                        <img src="assets/whatsapp icon.svg" width="35" alt="WhatsApp Icon">
+                                    </a>
+                                </td>
+                                <td class="align-middle" >
+                                    <a href="https://wa.me/6581667971" target="_blank"
+                                        class="contact-link text-decoration-underline text-primary fw-medium">
+                                        +65 8166 7971
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Gmail -->
+            <div class="col-md-4 mb-4">
+                <div class="contact-box p-4 rounded text-center">
+                    <h5 class="fw-bold mb-3">Email Address</h5>
+
+                    <table class="mx-auto mb-3">
+                        <tr>
+                            <td class="align-middle pe-2">
+                                <img src="assets/gmail icon.svg" width="36" alt="Gmail Icon">
+                            </td>
+                            <td class="align-middle">
+                                <a href="mailto:wenpeiong00@gmail.com"
+                                    class="contact-link text-decoration-underline text-primary fw-semibold">
+                                    wenpeiong00@gmail.com
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wenpeiong00@gmail.com&su=Hello&body=Hi%20there!"
+                        target="_blank" class="btn btn-outline-primary btn-sm rounded-pill px-4">
+                        Direct to Gmail
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- Message Modal -->
+    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="messageModalLabel">Message Me</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--
                 <form id="contact-form" action="https://formspree.io/f/movekzrg"  method="POST">
                     <label class="mb-3">
                         <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
@@ -133,17 +217,17 @@
                     
                 </form>
                 -->
-                
-                <!--
+
+                    <!--
                     Disable reCAPTCHA
                     <input type="hidden" name="_captcha" value="false">
                 -->
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-    
+
     <footer class="text-center bg-dark text-light py-3 mt-5">
         <p>&copy; 2025 Sharon's Portfolio | Designed by Sharon Ong</p>
     </footer>
@@ -151,4 +235,5 @@
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

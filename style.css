@@ -135,3 +135,37 @@ footer {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.contact-box img {
+    transition: transform 0.2s ease;
+}
+.contact-box img:hover {
+    transform: scale(1.1);
+}
+.contact-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+.fixed-container {
+    max-width: 1325px; 
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;    
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+
+.contact-link {
+    color: #0d6efd; 
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-link:hover {
+    color: #000 !important; 
+  }
+  
