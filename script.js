@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    $("#contactButton").click(function () {
+    $("#messageButton").click(function () {
         Swal.fire({
-            title: "Contact Me",
+            title: "Message Me",
             html: `
                 <input type="text" id="swal-name" class="swal2-input" placeholder="Your Name">
                 <input type="email" id="swal-email" class="swal2-input" placeholder="Your Email">
